@@ -9,9 +9,11 @@ const initialState = {
 function list(state = initialState, action) {
   switch (action.type) {
   case ActionTypes.ADD_ITEM:
-    return { items: state.items.concat(action.item) };
+  	const newState ={};
+  	Object.assign(newState, state, { items: state.items.concat(action.item) });
+    return newState;
   default:
-    return state;
+    return state;  
   }
 }
 
