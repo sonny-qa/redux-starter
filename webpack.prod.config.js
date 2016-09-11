@@ -3,7 +3,7 @@ const webpack = require('webpack')
 
 module.exports = {
   devtool: 'source-map',
-  entry: ['./src/index'],
+  entry: ['./src/index', './src/assets/stylesheets/main.scss'],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -38,7 +38,7 @@ module.exports = {
         loader : 'url?prefix=font/&limit=10000'
       },
       {
-        test: /\.s?css$/,
+        test: /\.scss$/,
         loader: 'style!css!sass'
       },
       {
